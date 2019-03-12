@@ -64,8 +64,70 @@ label var monthlyWaterPipe "Smoked 2-29 days ago cigarettes"
 gen dailyWaterPipe=1 if nq9a3==8
 label var dailyWaterPipe "Smoke daily cigarettes"
 
+
 ///////////////////////////////////////////////////////////////////////////////
 
+//create var for students who use smokeless tobacco
+gen neverSmokeless=1 if nq9a4==1
+label var neverSmokeless "Never used smokeless tobacco"
+
+//create var for students who used smokeless tobacco 30+ days ago
+gen more30smokeless=1 if nq9a4==2
+label var more30smokeless "Used smokeless tobacoo 30+ days ago"
+
+//create var for students who used smokeless tobacco 2-29 days ago
+gen monthlySmokeless=1 if nq9a4==3
+replace monthlySmokeless=1 if nq9a4==4
+replace monthlySmokeless=1 if nq9a4==5
+replace monthlySmokeless=1 if nq9a4==6
+replace monthlySmokeless=1 if nq9a4==7
+label var monthlySmokeless "Used smokeless tobacco 2-29 days ago"
+
+//create var for students who use smokeless tobacco daily
+gen dailySmokeless=1 if nq9a4==8
+label var dailySmokeless=1 "Used smokeless tobacco daily"
+
+///////////////////////////////////////////////////////////////////////////////
+
+//create var students who never did alcohol
+gen neverAlcohol if nq9a5==1
+label var neverAlcohol "Never did alcohol"
+
+//create var students who used alcohol 30+ days ago
+gen more30Alcohol=1 if nq9a5==2
+label var more30Alcohol "Used alcohol 30+ days ago"
+
+//create var students who used alcohol 2-29 days ago
+gen monthlyAlcohol=1 if nq9a5==3
+replace monthlyAlcohol=1 if nq9a5==4
+replace monthlyAlcohol=1 if nq9a5==5
+replace monthlyAlcohol=1 if nq9a5==6
+replace monthlyAlcohol=1 if nq9a5==7
+label var monthlyAlcohol "Used alcohol 2-29 days ago"
+
+//create var for students who used alcohol daily
+gen dailyAlcohol=1 if nq9a5==8
+label var dailySmokeless=1 "Used alcohol daily"
+
+///////////////////////////////////////////////////////////////////////////////
+
+//create var students who never did pot
+gen neverPot if nq9a6==1
+label var neverPot "Never did pot"
+
+//create var students who smoked pot 30+ days ago
+gen more30Pot=1 if nq9a6==2
+label var more30Pot "Used pot 30+ days ago"
+
+//create var for students used pot 2-29 days ago
+gen monthlyPot=1 if nq9a6==3
+replace monthlyPot=1 if nq9a6==4
+replace monthlyPot=1 if nq9a6==5
+replace monthlyPot=1 if nq9a6==6
+replace monthlyPot=1 if nq9a6==7
+label var monthlyPot "Used pot 2-29 days ago"
+
+//create var for students who used pot dai
 
 
 
