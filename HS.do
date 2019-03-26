@@ -46,23 +46,23 @@ label var dailyWaterPipe "Smoke daily cigarettes"
 
 //create var for students that never smoke cigars
 gen neverCigars=1 if nq8a3==1
-label var neverWaterPipe "Never smoked water pipe"
+label var neverCigars "Never smoked water pipe"
 
 //create var for students who smoked cigars 30+ days ago
-gen more30WaterPipe=1 if nq8a3==2
-label var more30Cigarettes "Smoked 30+ days ago water pipe"
+gen more30Cigars=1 if nq8a3==2
+label var more30Cigars "Smoked 30+ days ago water pipe"
 
 //create var for students who smoked cigars 2-29 days ago
-gen monthlyWaterPipe=1 if nq8a3==3
-replace monthlyWaterPipe=1 if nq8a3==4
-replace monthlyWaterPipe=1 if nq8a3==5
-replace monthlyWaterPipe=1 if nq8a3==6
-replace monthlyWaterPipe=1 if nq8a3==7
-label var monthlyWaterPipe "Smoked 2-29 days ago cigarettes"
+gen monthlyCigars=1 if nq8a3==3
+replace monthlyCigars=1 if nq8a3==4
+replace monthlyCigars=1 if nq8a3==5
+replace monthlyCigars=1 if nq8a3==6
+replace monthlyCigars=1 if nq8a3==7
+label var monthlyCigars "Smoked 2-29 days ago cigarettes"
 
 //create var for students who smoke cigars daily
-gen dailyWaterPipe=1 if nq8a3==8
-label var dailyWaterPipe "Smoke daily cigarettes"
+gen dailyCigars=1 if nq8a3==8
+label var dailyCigars "Smoke daily cigarettes"
 
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -107,7 +107,7 @@ label var monthlyAlcohol "Used alcohol 2-29 days ago"
 
 //create var for students who used alcohol daily
 gen dailyAlcohol=1 if nq8a5==8
-label var dailySmokeless=1 "Used alcohol daily"
+label var dailyAlcohol=1 "Used alcohol daily"
 
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -190,23 +190,66 @@ gen gpaA=1 if nq63==1
 label var gpaA "GPA of A"
 
 //create var for GPA of B
-gen gpaA=1 if nq63==2
+gen gpaB=1 if nq63==2
 label var gpaA "GPA of B"
 
 //create var for GPA of C
-gen gpaA=1 if nq63==3
+gen gpaC=1 if nq63==3
 label var gpaA "GPA of C"
 
 //create var for GPA of D/F
-gen gpaA=1 if nq63==4
+gen gpaDF=1 if nq63==4
 label var gpaA "GPA of D/F"
 
 //create var for GPA of N/A
-gen gpaA=1 if nq63==5
+gen gpaNA=1 if nq63==5
 label var gpaA "GPA of N/A"
 
 ///////////////////////////////////////////////////////////////////////////////
 
+//TAB ALL RESULTS
+
+tab neverCigarettes
+tab more30Cigarettes
+tab monthlyCigarettes
+tab dailyCigarettes
+tab neverWaterPipe
+tab more30WaterPipe
+tab monthlyWaterPipe
+tab dailyWaterPipe
+tab neverCigars
+tab more30Cigars
+tab monthlyCigars
+tab dailyCigars
+tab neverSmokeless
+tab more30smokeless
+tab monthlySmokeless
+tab dailySmokeless
+tab neverAlcohol
+tab more30Alcohol
+tab monthlyAlcohol
+tab dailyAlcohol
+tab neverPot
+tab more30Pot
+tab monthlyPot
+tab dailyPot
+tab notApplicableAlcoholAcademic
+tab neverAlcoholAcademic
+tab lowerAssignmentAlcoholAcademic
+tab lowerCourseAlcoholAcademic
+tab incompleteCourseAlcoholAcademic
+tab disruptionCourseAlcoholAcademic
+tab notApplicableDrugAcademic
+tab neverDrugAcademic
+tab lowerAssignmentDrugAcademic
+tab lowerCourseDrugAcademic
+tab incompleteCourseDrugAcademic
+tab disruptionCourseDrugAcademic
+tab gpaA
+tab gpaB
+tab gpaC
+tab gpaDF
+tab gpaNA
 
 
 
