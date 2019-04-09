@@ -251,6 +251,45 @@ tab gpaC
 tab gpaDF
 tab gpaNA
 
+///////////////////////////////////////////////////////////////////////////////
+
+//create var for highGPA holding gpa A and B students
+gen highGPA=1 if gpaA==1
+replace highGPA=1 if gpaB==1
+tab highGPA
+
+//create var for lowGPA holding gpa C, D, and F students
+gen lowGPA=1 if gpaC==1
+replace lowGPA=1 if gpaDF==1
+
+//create binary variable for GPA
+gen GPA=1 if highGPA==1
+replace GPA=2 if lowGPA==1
+tab GPA
+
+///////////////////////////////////////////////////////////////////////////////
+
+//create binary var for cigarette usage
+gen useCigarette=1 if
+
+//create binary var for water pipe usage
+gen useWaterPipe=1 if 
+
+//create binary var for cigars usage
+gen useCigar=1 if 
+
+//create binary var for smokeless usage
+gen useSmokeless=1 if 
+
+//create binary var for alcohol usage
+gen useAlcohol=1 if
+
+//create binary var for pot usage
+gen usePot=1 if 
+
+
+
+
 
 
 
