@@ -85,7 +85,7 @@ label var monthlySmokeless "Used smokeless tobacco 2-29 days ago"
 
 //create var for students who use smokeless tobacco daily
 gen dailySmokeless=1 if nq8a4==8
-label var dailySmokeless=1 "Used smokeless tobacco daily"
+label var dailySmokeless "Used smokeless tobacco daily"
 
 ///////////////////////////////////////////////////////////////////////////////
 
