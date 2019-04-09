@@ -107,7 +107,7 @@ label var monthlyAlcohol "Used alcohol 2-29 days ago"
 
 //create var for students who used alcohol daily
 gen dailyAlcohol=1 if nq8a5==8
-label var dailyAlcohol=1 "Used alcohol daily"
+label var dailyAlcohol "Used alcohol daily"
 
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -129,7 +129,7 @@ label var monthlyPot "Used pot 2-29 days ago"
 
 //create var for students who used pot daily
 gen dailyPot=1 if nq8a6==8
-label var dailyPot=1 "Used pot daily"
+label var dailyPot "Used pot daily"
 
 ///////////////////////////////////////////////////////////////////////////////
 
