@@ -288,6 +288,9 @@ gen useAlcohol=1 if
 gen usePot=1 if 
 
 
+do "\\cnsdisk.austin.utexas.edu\home\dm46647\Desktop\HS.do"
+
+
 
 
 
