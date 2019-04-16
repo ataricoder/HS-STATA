@@ -269,23 +269,71 @@ tab GPA
 
 ///////////////////////////////////////////////////////////////////////////////
 
-//create binary var for cigarette usage
-gen useCigarette=1 if
+//create binary var for cigarette usage NOTE: MORE30CIGARETTES MAY SKEW DATA
+gen useCigarette=1 if more30Cigarettes==1
+replace useCigarette=1 if monthlyCigarette==1
+replace useCigarette=1 if dailyCigarettes==1
 
-//create binary var for water pipe usage
-gen useWaterPipe=1 if 
+replace useCigarette=2 if neverCigarettes==1
 
-//create binary var for cigars usage
-gen useCigar=1 if 
+tab useCigarette
 
-//create binary var for smokeless usage
-gen useSmokeless=1 if 
+///////////////////////////////////////////////////////////////////////////////
 
-//create binary var for alcohol usage
-gen useAlcohol=1 if
+//create binary var for water pipe usage NOTE: MORE30WATERPIPE MAY SKEW DATA
+gen useWaterPipe=1 if more30WaterPipe==1
+replace useWaterPipe=1 if monthlyWaterPipe==1
+replace useWaterPipe=1 if dailyWaterPipe==1
+
+replace useWaterPipe=2 if neverWaterPipe==1
+
+tab useWaterPipe
+
+///////////////////////////////////////////////////////////////////////////////
+
+//create binary var for cigars usage NOTE: MORE30CIGARS MAY SKEW DATA
+gen useCigar=1 if more30cigars==1
+replace useCigar=1 if monthlyCigars==1
+replace useCigar=1 if dailyCigars==1
+
+replace useCigar=2 if neverCigars==1
+
+tab useCigar
+
+///////////////////////////////////////////////////////////////////////////////
+
+//create binary var for smokeless usage NOTE: MORE30SMOKELESS MAY SKEW DATA
+gen useSmokeless=1 if more30smokeless==1
+replace useSmokeless=1 if monthlySmokeless==1
+replace useSmokeless=1 if dailySmokeless==1
+
+replace useSmokeless=2 if neverSmokeless==1
+
+tab useSmokeless
+
+///////////////////////////////////////////////////////////////////////////////
+
+//create binary var for alcohol usage NOTE: MORE30ALCOHOL MAY SKEW DATA
+gen useAlcohol=1 if more30Alcohol==1
+replace useAlcohol=1 if monthlyAlcohol==1
+replace useAlcohol=1 if dailyAlcohol==1
+
+replace useAlcohol=2 if neverAlcohol==1
+
+tab useAlcohol
+
+///////////////////////////////////////////////////////////////////////////////
 
 //create binary var for pot usage
-gen usePot=1 if 
+gen usePot=1 if more30Pot==1
+replace usePot=1 if monthlyPot==1
+replace usePot=1 if dailyPot==1
+
+replace usePot=2 if neverPot==1
+
+tab usePot
+
+///////////////////////////////////////////////////////////////////////////////
 
 
 do "\\cnsdisk.austin.utexas.edu\home\dm46647\Desktop\HS.do"
