@@ -263,8 +263,8 @@ gen lowGPA=1 if gpaC==1
 replace lowGPA=1 if gpaDF==1
 
 //create binary variable for GPA
-gen GPA=0 if highGPA==1
-replace GPA=1 if lowGPA==1
+gen GPA=1 if highGPA==1
+replace GPA=0 if lowGPA==1
 tab GPA
 
 ///////////////////////////////////////////////////////////////////////////////
