@@ -292,7 +292,7 @@ tab useWaterPipe
 ///////////////////////////////////////////////////////////////////////////////
 
 //create binary var for cigars usage NOTE: MORE30CIGARS MAY SKEW DATA
-gen useCigar=1 if more30cigars==1
+gen useCigar=1 if more30Cigars==1
 replace useCigar=1 if monthlyCigars==1
 replace useCigar=1 if dailyCigars==1
 
