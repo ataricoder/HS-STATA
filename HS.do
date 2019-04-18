@@ -335,6 +335,11 @@ tab usePot
 
 ///////////////////////////////////////////////////////////////////////////////
 
+gen useTobacco=1 if useCigarette==1
+replace useTobacco=1 if useWaterPipe==1
+replace useTobacco=1 if useCigar==1
+replace useTobacco=1 if useSmokeless==1
+
 
 do "\\cnsdisk.austin.utexas.edu\home\dm46647\Desktop\HS.do"
 
