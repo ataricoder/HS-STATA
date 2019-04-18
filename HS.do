@@ -274,7 +274,7 @@ gen useCigarette=1 if more30Cigarettes==1
 replace useCigarette=1 if monthlyCigarette==1
 replace useCigarette=1 if dailyCigarettes==1
 
-replace useCigarette=2 if neverCigarettes==1
+replace useCigarette=0 if neverCigarettes==1
 
 tab useCigarette
 
@@ -285,7 +285,7 @@ gen useWaterPipe=1 if more30WaterPipe==1
 replace useWaterPipe=1 if monthlyWaterPipe==1
 replace useWaterPipe=1 if dailyWaterPipe==1
 
-replace useWaterPipe=2 if neverWaterPipe==1
+replace useWaterPipe=0 if neverWaterPipe==1
 
 tab useWaterPipe
 
@@ -296,7 +296,7 @@ gen useCigar=1 if more30Cigars==1
 replace useCigar=1 if monthlyCigars==1
 replace useCigar=1 if dailyCigars==1
 
-replace useCigar=2 if neverCigars==1
+replace useCigar=0 if neverCigars==1
 
 tab useCigar
 
@@ -307,7 +307,7 @@ gen useSmokeless=1 if more30smokeless==1
 replace useSmokeless=1 if monthlySmokeless==1
 replace useSmokeless=1 if dailySmokeless==1
 
-replace useSmokeless=2 if neverSmokeless==1
+replace useSmokeless=0 if neverSmokeless==1
 
 tab useSmokeless
 
@@ -318,7 +318,7 @@ gen useAlcohol=1 if more30Alcohol==1
 replace useAlcohol=1 if monthlyAlcohol==1
 replace useAlcohol=1 if dailyAlcohol==1
 
-replace useAlcohol=2 if neverAlcohol==1
+replace useAlcohol=0 if neverAlcohol==1
 
 tab useAlcohol
 
@@ -329,7 +329,7 @@ gen usePot=1 if more30Pot==1
 replace usePot=1 if monthlyPot==1
 replace usePot=1 if dailyPot==1
 
-replace usePot=2 if neverPot==1
+replace usePot=0 if neverPot==1
 
 tab usePot
 
