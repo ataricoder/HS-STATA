@@ -341,7 +341,7 @@ replace useTobacco=1 if useWaterPipe==1
 replace useTobacco=1 if useCigar==1
 replace useTobacco=1 if useSmokeless==1
 
-gen neverTobacco=0 if useCigarette==0
+gen neverTobacco=1 if useCigarette==0
 replace neverTobacco=1 if useWaterPipe==0
 replace neverTobacco=1 if useCigar==0
 replace neverTobacco=1 if useSmokeless==0
