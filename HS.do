@@ -313,29 +313,7 @@ tab useSmokeless
 
 ///////////////////////////////////////////////////////////////////////////////
 
-//create binary var for alcohol usage NOTE: MORE30ALCOHOL MAY SKEW DATA
-gen useAlcohol=1 if more30Alcohol==1
-replace useAlcohol=1 if monthlyAlcohol==1
-replace useAlcohol=1 if dailyAlcohol==1
-
-replace useAlcohol=0 if neverAlcohol==1
-
-tab useAlcohol
-
-///////////////////////////////////////////////////////////////////////////////
-
-//create binary var for pot usage
-gen usePot=1 if more30Pot==1
-replace usePot=1 if monthlyPot==1
-replace usePot=1 if dailyPot==1
-
-replace usePot=0 if neverPot==1
-
-tab usePot
-
-///////////////////////////////////////////////////////////////////////////////
-
-//create var for all tobacco use
+//create binary var for all tobacco use NOTE: MORE30 MAY SKEW DATA
 gen useTobacco=1 if useCigarette==1
 replace useTobacco=1 if useWaterPipe==1
 replace useTobacco=1 if useCigar==1
@@ -345,6 +323,40 @@ replace useTobacco=0 if useCigarette==0
 replace useTobacco=0 if useWaterPipe==0
 replace useTobacco=0 if useCigar==0
 replace useTobacco=0 if useSmokeless==0
+
+///////////////////////////////////////////////////////////////////////////////
+
+//create binary var for alcohol usage NOTE: MORE30ALCOHOL MAY SKEW DATA
+gen useAlcohol=1 if more30Alcohol==1
+replace useAlcohol=1 if monthlyAlcohol==1
+replace useAlcohol=1 if dailyAlcohol==1
+
+replace useAlcohol=0 if neverAlcohol==1
+
+///////////////////////////////////////////////////////////////////////////////
+
+//create binary var for pot usage NOTE: MORE30POT MAY SKEW DATA
+gen usePot=1 if more30Pot==1
+replace usePot=1 if monthlyPot==1
+replace usePot=1 if dailyPot==1
+
+replace usePot=0 if neverPot==1
+
+///////////////////////////////////////////////////////////////////////////////
+
+//probabilty of having lowGPA (GPA of C,D,F) if usePot (have ever smoked pot)
+logit GPA usePot, or
+
+//probability of having lowGPA (GPA of C,D,F) if useAlcohol (have ever used alcohol)
+logit GPA useAlcohol, or
+
+//probability of having lowGPA (GPA of C,D,F) if useTobacco (have ever used a kind of tobacco)
+logit GPA useTobacco, or
+
+
+
+
+
 
 
 //create var for all alcohol use
