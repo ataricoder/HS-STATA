@@ -335,10 +335,20 @@ tab usePot
 
 ///////////////////////////////////////////////////////////////////////////////
 
+//create var for all tobacco use
 gen useTobacco=1 if useCigarette==1
 replace useTobacco=1 if useWaterPipe==1
 replace useTobacco=1 if useCigar==1
 replace useTobacco=1 if useSmokeless==1
+
+gen neverTobacco=0 if useCigarette==0
+replace neverTobacco=1 if useWaterPipe==0
+replace neverTobacco=1 if useCigar==0
+replace neverTobacco=1 if useSmokeless==0
+
+
+//create var for all alcohol use
+
 
 
 do "\\cnsdisk.austin.utexas.edu\home\dm46647\Desktop\HS.do"
