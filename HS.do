@@ -353,13 +353,27 @@ logit GPA useAlcohol, or
 //probability of having lowGPA (GPA of C,D,F) if useTobacco (have ever used a kind of tobacco)
 logit GPA useTobacco, or
 
+//join all these probabilities above, with lowGPA
+logit GPA usePot useAlcohol useTobacco, or
+
+///////////////////////////////////////////////////////////////////////////////
+
+//combine alcohol, pot, and tobacco use into one var
+gen useDrug=1 if usePot==1
+replace useDrug=1 if useAlcohol==1
+replace useDrug=1 if useTobacco==1
+
+//var for no drug use
+replace useDrug=0 if usePot=0
+replace useDrug=0 if useAlcohol=0
+replace useDrug=0 if useTobacco==0
+
+//probability of lowGPA if useDrug (using alcohol, tobacco, pot)
+logit GPA useDrug, or
+
+///////////////////////////////////////////////////////////////////////////////
 
 
-
-
-
-
-//create var for all alcohol use
 
 
 
