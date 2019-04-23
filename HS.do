@@ -373,6 +373,53 @@ logit GPA useDrug, or
 
 ///////////////////////////////////////////////////////////////////////////////
 
+//create race/ethnicity variables
+gen white=1 if nq54a==1
+replace white=0 if nq54a==0
+
+gen black=1 if nq54b==1
+replace black=0 if nq54b==0
+
+gen hispanic=1 if nq54c==1
+replace hispanic=0 if nq54c==0
+
+gen asian=1 if nq54d==1
+replace asian=0 if nq54d==0
+
+gen multiother=1 if nq54e==1
+replace multiother=1 if nq54g==1
+replace multiother=1 if nq54g==1
+replace multiother=0 if ~(nq54e==1 | nq54g==1 | nq54g==1)
+
+//move people who are in two categories into multirace group
+replace multiother=1 if (white==1 & black==1) | (white==1 & hispanic==1) | (white==1 & asian==1) | (white==1 & multiother==1)
+replace white=0 if multiother==1
+
+replace multiother=1 if (black==1 & hispanic==1) | (black==1 & asian==1) | (black==1 & multiother==1)
+replace black=0 if multiother==1
+
+replace multiother=1 if (asian==1 & multiother==1)
+replace asian=0 if multiother==1
+
+replace multiother=1 if white==0 & black==0 & hisp==0 & asian==0 
+
+///////////////////////////////////////////////////////////////////////////////
+
+//create gender variable
+gen female=1 if nq47==1
+replace female=0 if nq47~=1
+
+///////////////////////////////////////////////////////////////////////////////
+
+//create trans variable
+gen trans=1 if nq47==3
+replace trans=0 if nq47~=3
+
+///////////////////////////////////////////////////////////////////////////////
+
+
+
+
 
 
 
