@@ -364,8 +364,8 @@ replace useDrug=1 if useAlcohol==1
 replace useDrug=1 if useTobacco==1
 
 //var for no drug use
-replace useDrug=0 if usePot=0
-replace useDrug=0 if useAlcohol=0
+replace useDrug=0 if usePot==0
+replace useDrug=0 if useAlcohol==0
 replace useDrug=0 if useTobacco==0
 
 //probability of lowGPA if useDrug (using alcohol, tobacco, pot)
