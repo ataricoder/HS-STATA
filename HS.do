@@ -451,8 +451,10 @@ gen noStress=1 if nq37==1
 
 gen mediumStress=1 if nq37==2
 replace mediumStress=1 if nq37==3
-replace mediumStress=0 if nq37~=2
-replace mediumStress=0 if nq37~=3
+replace mediumStress=0 if nq37==1
+replace mediumStress=0 if nq37==4
+replace mediumStress=0 if nq37==5
+
 
 gen highStress=1 if nq37==4
 replace highStress=0 if nq37~=4
@@ -490,14 +492,20 @@ logit GPA useDrug, or
 //second model - with control variables
 
 //second model
-logit GPA usePot useAlcohol useTobacco black hispanic asian multiother female trans, or
+logit GPA usePot useAlcohol useTobacco black hispanic asian multiother female straight, or
+
+//second model - simplified
+logit GPA useDrug black hispanic asian multiother female straight, or
 
 ///////////////////////////////////////////////////////////////////////////////
 
 //third model - full multivariate model with stress vars and relationship vars
 
 //third model
-logit GPA usePot useAlcohol useTobacco black hispanic asian multiother female trans mediumStress highStress helpStress relationship, or
+logit GPA usePot useAlcohol useTobacco black hispanic asian multiother female straight mediumStress highStress helpStress relationship, or
+
+//third model - simplified
+logit GPA useDrug black hispanic asian multiother female straight mediumStress highStress helpStress relationship, or
 
 ///////////////////////////////////////////////////////////////////////////////
 
