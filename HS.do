@@ -446,27 +446,13 @@ tab straight
 
 ///////////////////////////////////////////////////////////////////////////////
 
-//stress - mediating variable
-gen noStress=1 if nq37==1
+//sleep - mediating variable
+gen sleep=1 if nq43~=1
+replace sleep=0 if nq43==1
 
-gen mediumStress=1 if nq37==2
-replace mediumStress=1 if nq37==3
-replace mediumStress=0 if nq37==1
-replace mediumStress=0 if nq37==4
-replace mediumStress=0 if nq37==5
+//debug sleep var
+tab sleep
 
-
-gen highStress=1 if nq37==4
-replace highStress=0 if nq37~=4
-
-gen helpStress=1 if nq37==5
-replace helpStress=0 if nq37~=5
-
-//debug stress
-tab noStress
-tab mediumStress
-tab highStress
-tab helpStress
 
 ///////////////////////////////////////////////////////////////////////////////
 
