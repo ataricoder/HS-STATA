@@ -489,7 +489,7 @@ logit GPA useDrug, or
 
 ///////////////////////////////////////////////////////////////////////////////
 
-//second model - with control variables
+//second model - with control variables demographics
 
 //second model
 logit GPA usePot useAlcohol useTobacco black hispanic asian multiother female straight, or
@@ -499,7 +499,27 @@ logit GPA useDrug black hispanic asian multiother female straight, or
 
 ///////////////////////////////////////////////////////////////////////////////
 
-//third model - full multivariate model with stress vars and relationship vars
+//third model - full multivariate demographic model with stress vars
+
+//third model
+logit GPA usePot useAlcohol useTobacco black hispanic asian multiother female straight mediumStress highStress helpStress relationship, or
+
+//third model - simplified
+logit GPA useDrug black hispanic asian multiother female straight mediumStress highStress helpStress relationship, or
+
+///////////////////////////////////////////////////////////////////////////////
+
+//fourth model - full multivariate demographic model with relationship vars
+
+//third model
+logit GPA usePot useAlcohol useTobacco black hispanic asian multiother female straight relationship, or
+
+//third model - simplified
+logit GPA useDrug black hispanic asian multiother female straight relationship, or
+
+///////////////////////////////////////////////////////////////////////////////
+
+//third model - full multivariate demographic model with stress vars
 
 //third model
 logit GPA usePot useAlcohol useTobacco black hispanic asian multiother female straight mediumStress highStress helpStress relationship, or
