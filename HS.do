@@ -477,6 +477,29 @@ replace relationship=0 if nq56==1
 //debug - relationship
 tab relationship
 
+///////////////////////////////////////////////////////////////////////////////
+
+//first model
+logit GPA usePot useAlcohol useTobacco, or
+
+//first model simplified
+logit GPA useDrug, or
+
+///////////////////////////////////////////////////////////////////////////////
+
+//second model - with control variables
+
+//second model
+logit GPA usePot useAlcohol useTobacco black hispanic asian multiother female trans, or
+
+///////////////////////////////////////////////////////////////////////////////
+
+//third model - full multivariate model with stress vars and relationship vars
+
+//third model
+logit GPA usePot useAlcohol useTobacco black hispanic asian multiother female trans mediumStress highStress helpStress relationship, or
+
+///////////////////////////////////////////////////////////////////////////////
 
 do "\\cnsdisk.austin.utexas.edu\home\dm46647\Desktop\HS.do"
 
