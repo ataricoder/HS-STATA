@@ -485,13 +485,13 @@ logit GPA useDrug black hispanic asian multiother female straight intl, or
 
 ///////////////////////////////////////////////////////////////////////////////
 
-//third model - full multivariate demographic model with stress vars
+//third model - full multivariate demographic model with sleep vars
 
 //third model
-logit GPA usePot useAlcohol useTobacco black hispanic asian multiother female straight intl sleep relationship, or
+logit GPA usePot useAlcohol useTobacco black hispanic asian multiother female straight intl sleep, or
 
 //third model - simplified
-logit GPA useDrug black hispanic asian multiother female straight intl sleep relationship, or
+logit GPA useDrug black hispanic asian multiother female straight intl sleep, or
 
 ///////////////////////////////////////////////////////////////////////////////
 
