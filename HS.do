@@ -457,10 +457,10 @@ tab sleep
 ///////////////////////////////////////////////////////////////////////////////
 
 //relationship status - mediating variable
-gen relationship=1 if nq56==2
-replace relationship=1 if nq56==3
+gen relationship=0 if nq56==2
+replace relationship=0 if nq56==3
 
-replace relationship=0 if nq56==1
+replace relationship=1 if nq56==1
 
 //debug - relationship
 tab relationship
